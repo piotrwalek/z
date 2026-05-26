@@ -84,7 +84,7 @@ jobs:
           -p:AcceptAndroidSDKLicenses=true \
           -p:AndroidPackageFormats=apk \
           -p:AndroidTargetSdkVersion=35 \
-          -p:AndroidMinSdkVersion=24
+          -p:AndroidMinSdkVersion=24 \
           -p:ApplicationDisplayVersion=${{ steps.version.outputs.tag }} \
           -p:AndroidKeyStore=true \
           -p:AndroidSigningKeyStore=${{ github.workspace }}/myapp.keystore \
