@@ -87,8 +87,8 @@ jobs:
           -p:AndroidKeyStore=true \
           -p:AndroidSigningKeyStore=${{ github.workspace }}/myapp.keystore \
           -p:AndroidSigningKeyAlias=myapp \
-          -p:AndroidSigningKeyPass=${{ secrets.KEYSTORE_PASSWORD }} \
-          -p:AndroidSigningStorePass=${{ secrets.KEYSTORE_PASSWORD }}          
+          -p:AndroidSigningKeyPass=xxx${{ secrets.KEYSTORE_PASSWORD }} \
+          -p:AndroidSigningStorePass=xxx${{ secrets.KEYSTORE_PASSWORD }}          
 
     # ── Rename APK with version ───────────────────────────────────────────────
     - name: Rename APK
