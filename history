@@ -1,0 +1,35 @@
+    1  dotnet --version 
+    2  dotnet workload list   
+    3  sdkmanager --list_installed
+    4  java -version 
+    5  dotnet new maui -n MyMauiApp
+    6  cd MyMauiApp/
+    7  dotnet build -f net10.0-android -c Debug
+    8  dir /opt/android-sdk/platforms/android-35/
+    9  sdkmanager "platforms;android-36" "build-tools;36.0.0"
+   10  lll
+   11  dotnet build -f net10.0-android -c Debug
+   12  dotnet build -t:InstallAndroidDependencies -f net10.0-android "-p:AndroidSdkDirecto
+      ry=/opt/android-sdk"
+   13  dotnet build -t:InstallAndroidDependencies -f net10.0-android "-p:AndroidSdkDirectory=/opt/android-sdk"
+   14  dotnet build -f net10.0-android -c Debug
+   15  yes | sdkmanager "platforms;android-36" "build-tools;36.0.0"
+   16  dotnet build -t:InstallAndroidDependencies -f net10.0-android "-p:AndroidSdkDirecto
+      ry=/opt/android-sdk"
+   17  dotnet build -t:InstallAndroidDependencies -f net10.0-android "-p:AndroidSdkDirectory=/opt/android-sdk"
+   18  dotnet build -t:InstallAndroidDependencies -f net10.0-android "-p:AndroidSdkDirectory=/opt/android-sdk"  -p:AcceptAndroidSDKLicenses=true
+   19  sudo dotnet build -t:InstallAndroidDependencies -f net10.0-android "-p:AndroidSdkDirectory=/opt/android-sdk"  -p:AcceptAndroidSDKLicenses=true
+   20  dotnet build -f net10.0-android -c Debug
+   21  dir
+   22  cd bin
+   23  dir
+   24  cd Debug/
+   25* dirhishishi
+   26  cd net10.0-android/
+   27  dir
+   28  history
+   29  cd ..
+   30  cd MyMauiApp/
+   31  dir
+   32  cd ..
+   33  history > history
