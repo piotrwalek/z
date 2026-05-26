@@ -83,7 +83,7 @@ jobs:
           -p:AndroidSdkDirectory=$ANDROID_SDK_ROOT \
           -p:AcceptAndroidSDKLicenses=true \
           -p:AndroidPackageFormats=apk \
-          -p:ApplicationDisplayVersion=${{ steps.version.outputs.tag }}
+          -p:ApplicationDisplayVersion=${{ steps.version.outputs.tag }} \
           -p:AndroidKeyStore=true \
           -p:AndroidSigningKeyStore=${{ github.workspace }}/myapp.keystore \
           -p:AndroidSigningKeyAlias=myapp \
