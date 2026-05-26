@@ -1,24 +1,29 @@
 {
-  "name": ".NET MAUI Android (net10 preview)",
-  "image": "mcr.microsoft.com/devcontainers/dotnet:0-8.0",
-
-  "features": {
-    "ghcr.io/devcontainers/features/java:1": {
-      "version": "17"
-    },
-    "ghcr.io/devcontainers/features/android-sdk:1": {}
+  "name": ".NET 10 MAUI Android",
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-
-  "postCreateCommand": "bash .devcontainer/setup.sh",
-
   "customizations": {
     "vscode": {
       "extensions": [
+        "ms-dotnettools.csdevkit",
         "ms-dotnettools.csharp",
-        "ms-dotnettools.csdevkit"
-      ]
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "ms-dotnettools.dotnet-maui"
+      ],
+      "settings": {
+        "dotnet.defaultSolution": "disable"
+      }
     }
   },
-
-  "remoteUser": "vscode"
+  "remoteEnv": {
+    "ANDROID_SDK_ROOT": "/opt/android-sdk",
+    "ANDROID_HOME": "/opt/android-sdk"
+  },
+  "postCreateCommand": "dotnet workload update",
+  "forwardPorts": [5554, 5555],
+  "hostRequirements": {
+    "memory": "8gb",
+    "cpus": 4
+  }
 }
