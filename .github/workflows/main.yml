@@ -67,6 +67,13 @@ jobs:
         fi
 
     # ── Build ─────────────────────────────────────────────────────────────────
+
+    - name: Decode keystore
+      run: |
+        echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > myapp.keystore
+    
+    
+    
     - name: Build Release APK
       run: |
         cd MyMauiApp/
@@ -77,6 +84,11 @@ jobs:
           -p:AcceptAndroidSDKLicenses=true \
           -p:AndroidPackageFormats=apk \
           -p:ApplicationDisplayVersion=${{ steps.version.outputs.tag }}
+          -p:AndroidKeyStore=true \
+          -p:AndroidSigningKeyStore=${{ github.workspace }}/myapp.keystore \
+          -p:AndroidSigningKeyAlias=myapp \
+          -p:AndroidSigningKeyPass=${{ secrets.KEYSTORE_PASSWORD }} \
+          -p:AndroidSigningStorePass=${{ secrets.KEYSTORE_PASSWORD }}          
 
     # ── Rename APK with version ───────────────────────────────────────────────
     - name: Rename APK
